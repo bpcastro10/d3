@@ -1,0 +1,109 @@
+/* Estilos generales para la demo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5; /* Color de fondo ligeramente diferente para la demo */
+    color: #212529;
+    line-height: 1.5;
+    padding-top: 4rem; /* Espacio para la barra de navegación fija */
+    padding-bottom: 1rem;
+}
+
+.container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255,255,255,0.8) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+}
+
+/* Estilos para las tarjetas y métricas (similares a assets) */
+.card {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.metric-card {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    background-color: #fff;
+    margin-bottom: 1rem; /* Espacio entre métricas en pantallas pequeñas */
+}
+
+.metric-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: #007bff; /* Color primario de Bootstrap */
+}
+
+.metric-card p {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Contenedor para los gráficos uPlot */
+.chart-container {
+    position: relative;
+    height: 350px; /* Altura definida para los gráficos */
+    width: 100%;
+    margin: auto;
+}
+
+/* Estilos para los tooltips de uPlot (asegurar visibilidad y posición) */
+.uplot-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: #fff; /* Texto blanco */
+    padding: 8px 12px;
+    border-radius: 4px;
+    pointer-events: none; /* Importante para no interferir con la interacción del gráfico */
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+    font-size: 14px;
+    white-space: nowrap; /* Prevenir salto de línea en el contenido del tooltip */
+    opacity: 1; /* Controlado por JS */
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .metric-card {
+        margin-bottom: 0.75rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .chart-container {
+         height: 300px; /* Altura ligeramente menor en pantallas pequeñas */
+    }
+} 

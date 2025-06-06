@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Tickets</title>
+    
+    <!-- Zendesk Apps Framework (ZAF) Client -->
+    <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+    
+    <!-- uPlot -->
+    <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.24/dist/uPlot.iife.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.24/dist/uPlot.min.css">
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Sección de métricas -->
+        <div id="resumen" class="row mt-3">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Resumen General</h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <h3 id="total-tickets">0</h3>
+                                    <p>Total de Tickets</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <h3 id="tickets-hoy">0</h3>
+                                    <p>Tickets Hoy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <h3 id="tickets-pendientes">0</h3>
+                                    <p>Tickets Pendientes</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-card">
+                                    <h3 id="tasa-resolucion">0%</h3>
+                                    <p>Tasa de Resolución</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráficos de distribución -->
+        <div id="distribution" class="row mt-3">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Distribución por Estado</h5>
+                        <div class="chart-container">
+                            <div id="status-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Distribución por Prioridad</h5>
+                        <div class="chart-container">
+                            <div id="priority-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráfico temporal -->
+        <div id="temporal" class="row mt-3">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tickets por Día</h5>
+                        <div class="chart-container">
+                            <div id="temporal-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráficos de distribución temporal -->
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Distribución por Hora</h5>
+                        <div class="chart-container">
+                            <div id="hourly-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Distribución por Día de la Semana</h5>
+                        <div class="chart-container">
+                            <div id="weekday-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráfico de proyección -->
+        <div id="proyeccion" class="row mt-3">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyección de Tickets</h5>
+                        <div class="chart-container">
+                            <div id="projection-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="app.js"></script>
+</body>
+</html> 
