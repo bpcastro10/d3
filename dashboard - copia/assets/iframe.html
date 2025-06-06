@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ticket Analytics Dashboard</title>
+    <script src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uplot@1.6.24/dist/uPlot.iife.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.24/dist/uPlot.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Análisis de Tickets</h2>
+            <div class="date-filter">
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+                <button onclick="updateDashboard()">Actualizar</button>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3>Total Tickets</h3>
+                <p id="totalTickets">-</p>
+            </div>
+            <div class="stat-box">
+                <h3>Abiertos</h3>
+                <p id="openTickets">-</p>
+            </div>
+            <div class="stat-box">
+                <h3>Cerrados</h3>
+                <p id="closedTickets">-</p>
+            </div>
+        </div>
+
+        <div class="realtime-chart-container">
+            <div class="chart-box realtime-chart">
+                <h3>Tickets en Tiempo Real</h3>
+                <div id="realtimeTrend"></div>
+            </div>
+        </div>
+
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Tendencia de Tickets</h3>
+                <div id="ticketTrend"></div>
+            </div>
+            <div class="chart-box">
+                <h3>Distribución por Prioridad</h3>
+                <div id="priorityDistribution"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
